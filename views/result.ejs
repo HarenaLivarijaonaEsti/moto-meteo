@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Résultat météo</title>
+  </head>
+
+  <body>
+    <a href="/" class="back-button"><h1>🌍 <%= city %></h1></a>
+
+    <ul>
+      <li>
+        🧭 Direction du vent : <%= forecast.wind10m?.direction || "N/A" %>
+      </li>
+    </ul>
+
+    <h2>🧠 Analyse météo</h2>
+    <pre><%= naturalWeather %></pre>
+
+    <h2 id="llmAction">Interprétation LLM</h2>
+
+    <pre id="llmText" data-text="<%= interpretation %>"></pre>
+    <script>
+      const el = document.getElementById("llmText");
+      const text = el.dataset.text;
+
+      let i = 0;
+
+      function typeWriter() {
+        if (i < text.length) {
+          el.textContent += text.charAt(i);
+          i++;
+          setTimeout(typeWriter, 15); // vitesse
+        }
+      }
+
+      typeWriter();
+    </script>
+  </body>
+</html>

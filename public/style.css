@@ -1,0 +1,186 @@
+/* RESET */
+html,
+body {
+    height: 100%;
+}
+
+/* ANIMATION D'ENTRÉE PAGE */
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+
+    background-image: url("/moto.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* TITRES */
+h1,
+h2 {
+    display: table;
+    margin: 10px auto;
+    color: #ffffff;
+    background-color: #4e4e4e88;
+    padding: 5px 5px;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+
+
+    animation: slideDown 0.6s ease-out;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    margin-bottom: 10px;
+
+    animation: slideDown 0.6s ease-out;
+}
+
+/* FORMULAIRE */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 350px;
+    margin: auto;
+
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* INPUT */
+input {
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    transform: scale(1.02);
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+
+/* BOUTON */
+button {
+    padding: 15px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    border: none;
+    background: #6a7c8fb7;
+    color: white;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: #0056b3;
+    transform: scale(1.03);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+
+/* CARTES */
+ul {
+    list-style: none;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* BLOCS TEXTE */
+pre {
+    background: #1e1e1e;
+    color: #00ff9c;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+    animation: fadeInUp 0.7s ease-out;
+}
+
+a {
+    text-decoration: none;
+}
+
+#llmText::after {
+    content: "▋";
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (min-width: 768px) {
+    body {
+        max-width: 600px;
+        margin: auto;
+    }
+}
