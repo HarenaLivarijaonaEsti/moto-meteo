@@ -44,8 +44,7 @@ L’application utilise Gemini pour :
 ## ⚙️ Installation
 
 ```bash
-git clone https://github.com/ton-user/moto-weather-ai.git
-cd moto-weather-ai
+git clone https://github.com/HarenaLivarijaonaEsti/moto-meteo.git
 npm install
 ```
 
