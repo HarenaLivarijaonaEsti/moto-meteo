@@ -18,6 +18,10 @@ body {
     animation: fadeIn 0.8s ease-out;
 }
 
+#retour{
+    text-align: end;
+}
+
 /* TITRES */
 h1,
 h2 {
