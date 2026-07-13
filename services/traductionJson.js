@@ -46,9 +46,5 @@ Température : ${temp}°C
 Humidité : ${humidity}
 Visibilité : ${visibility}
 Pression : ${pressure}
-
-TÂCHE POUR L'IA :
-Tu es un assistant de sécurité pour motards.
-Analyse ces données et donne des conseils de conduite (sécurité, équipement, risques).
 `;
 }
