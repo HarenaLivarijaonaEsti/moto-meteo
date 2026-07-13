@@ -1,24 +1,26 @@
-import { GoogleGenAI } from "@google/genai";
+import OpenAI from "openai";
 import dotenv from "dotenv";
+
 // fonction qui transforme la météo en prompt moto
 dotenv.config();
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+const ai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 export async function InterpretationLLM(traduction) {
   try {
-
-
-    // 1. appel Gemini
-    const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash-lite",
-      contents: traduction,
+    // 1. appel OpenAI
+    const response = await ai.responses.create({
+      model: "gpt-4o",
+      input: traduction,
     });
 
     // 2. résultat texte
-    return response.text;
+    return response.output_text;
 
   } catch (error) {
-    console.error("Erreur Gemini:", error.message);
+    console.error("Erreur OpenAI:", error.message);
     return "Erreur LLM";
   }
 }
